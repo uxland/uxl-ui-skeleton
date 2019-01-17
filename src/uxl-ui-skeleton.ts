@@ -20,4 +20,7 @@ export class UxlUiSkeleton extends LitElement {
 
     @property()
     number: number;
+
+    @property()
+    animation: skeletonAnimation;
 }
