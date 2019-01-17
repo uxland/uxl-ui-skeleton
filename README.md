@@ -30,7 +30,11 @@ Your application is already set up to be tested via [web-component-tester](https
 
 ### Properties
 
-               
+`number`: the number of elements that will display the skeleton
+
+`animation`: the animation type
+
+`type`: choose between different skeleton types               
 
 
 
