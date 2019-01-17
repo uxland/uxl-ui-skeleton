@@ -1,9 +1,9 @@
-# \<uxl-progress-indicator\>
+# \<uxl-ui-skeleton\>
 
-A progress indicator component
+An ui skeleton component
 
-[![Build Status](https://travis-ci.org/uxland/uxl-porgress-indicator.svg?branch=master)](https://travis-ci.org/uxland/uxl-progress-indicator)
-[![npm version](https://badge.fury.io/js/%40uxland%2Fuxl-progress-indicator.svg)](https://badge.fury.io/js/%40uxland%2Fuxl-progress-indicator)
+[![Build Status](https://travis-ci.org/uxland/uxl-ui-skeleton.svg?branch=master)](https://travis-ci.org/uxland/uxl-ui-skeleton)
+[![npm version](https://badge.fury.io/js/%40uxland%2Fuxl-ui-skeleton.svg)](https://badge.fury.io/js/%40uxland%2Fuxl-ui-skeleton)
 
 ## Install the Polymer-CLI
 

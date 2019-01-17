@@ -1,4 +1,4 @@
-import {html, LitElement} from '@polymer/lit-element/lit-element';
+import {html, LitElement, PropertyValues} from '@polymer/lit-element/lit-element';
 import {property, customElement} from "@uxland/uxl-polymer2-ts";
 import CSS from './uxl-ui-skeleton-styles.js';
 import {template as TEMPLATE} from './uxl-ui-skeleton-template.js';
@@ -11,9 +11,13 @@ export class UxlUiSkeleton extends LitElement {
         return html`${CSS} ${TEMPLATE(this)}`;
     }
 
-    @property()
-    number: number;
+     get items(){
+        return this.number && new Array(this.number);
+     }
 
     @property()
     type: skeletonType;
+
+    @property()
+    number: number;
 }

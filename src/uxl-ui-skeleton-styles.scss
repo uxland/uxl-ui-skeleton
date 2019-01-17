@@ -1,3 +1,56 @@
-div{
+@mixin animation-fade-out-in {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -webkit-animation: fadeOutOpacity 1.5s infinite;
+  -moz-animation: fadeOutOpacity 1.5s infinite;
+  -o-animation: fadeOutOpacity 1.5s infinite;
+  animation: fadeOutOpacity 1.5s infinite;
+}
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.skeletons{
+  @include animation-fade-out-in;
   display: flex;
+  flex-direction: column;
+  .skeleton{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 16px 0 16px;
+
+    .skeleton-title{
+      background-color: #e4e3e3;
+      border-radius: 5px;
+      margin-bottom: 6px;
+      height: 20px;
+      width: 30%;
+    }
+
+    .skeleton-content{
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      height: 50px;
+    }
+  }
 }
