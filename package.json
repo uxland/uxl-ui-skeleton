@@ -1,0 +1,66 @@
+{
+  "name": "@uxland/uxl-ui-skeleton",
+  "version": "0.0.0-development",
+  "description": "UXLand - UI Skeleton",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "author": "UXLand <dev@uxland.es> (http://www.uxland.es)",
+  "keywords": [
+    "polymer",
+    "web components"
+  ],
+  "homepage": "https://github.com/uxland/uxl-ui-skeleton#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uxland/uxl-ui-skeleton.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uxland/uxl-ui-skeleton/issues"
+  },
+  "dependencies": {
+    "@polymer/lit-element": "^0.7.1",
+    "@uxland/uxl-polymer2-ts": "^1.0.11"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.2",
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.2",
+    "@webcomponents/custom-elements": "^1.2.1",
+    "@webcomponents/webcomponentsjs": "^2.1.3",
+    "chai": "^4.2.0",
+    "dts-generator": "^2.1.0",
+    "esm": "^3.0.84",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^3.1.1",
+    "gulp-run": "^1.7.1",
+    "mocha": "^5.2.0",
+    "require-dir": "^0.3.2",
+    "rimraf": "^2.6.2",
+    "run-sequence": "^2.1.0",
+    "semantic-release": "^15.9.17",
+    "sinon": "^6.3.5",
+    "travis-deploy-once": "^5.0.9",
+    "typescript": "^3.2.2",
+    "wct-browser-legacy": "^1.0.0",
+    "wc-sass-render": "^1.1.1"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json || echo 'Skip common compile errors' ",
+    "test:ui:watch": "nodemon --watch test --watch src -x \"polymer test --config-file wct.config.json\"",
+    "test:ui": "polymer test --config-file wct.config.json",
+    "test:unit": "npm run build && node --experimental-modules node_modules/mocha/bin/_mocha -r esm --ui tdd --reporter mochawesome test/unit",
+    "dist": "tsc --p gulp/tsconfig-dist.json || echo 'Skip common compile errors' && gulp generate-d-ts",
+    "tdd": "node --experimental-modules node_modules/mocha/bin/_mocha --watch -r esm --ui tdd --reporter mochawesome test/unit",
+    "prepublishOnly": "if [ -d dist ]; then ncp dist/. . && rimraf dist/; fi",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release",
+    "compile-sass": "sass-render ./src/**/[!^_]*.scss --suffix .ts -t src/sass-template.js && npm run build"
+  },
+  "license": "Apache-2.0",
+  "directories": {
+    "test": "test"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>uxl-ui-skeleton demo</title>
+
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <script type="module">
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+      import '@polymer/iron-demo-helpers/demo-snippet';
+    </script>
+
+    <script type="module" src="../src/uxl-progress-indicator.js"></script>
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        uxl-progress-indicator{
+          --uxl-progress-indicator-color: #03A9F4;
+          --uxl-progress-indicator-stroke: 3px;
+        }
+
+        .items{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .items div{
+          background: grey;
+          color: #fff;
+          border-radius: 5px;
+          margin: 6px;
+          padding: 8px 12px;
+        }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic uxl-progress-indicator demo</h3>
+      <demo-snippet>
+        <template>
+          <uxl-progress-indicator active text="This is a default spinner progress"></uxl-progress-indicator>
+        </template>
+      </demo-snippet>
+      <demo-snippet>
+        <template>
+          <uxl-progress-indicator active text="This is a horizontal spinner progress" position="horizontal"></uxl-progress-indicator>
+        </template>
+      </demo-snippet>
+      <demo-snippet>
+        <template>
+          <uxl-progress-indicator active text="This is a horizontal progress bar" type="progress"></uxl-progress-indicator>
+        </template>
+      </demo-snippet>
+      <demo-snippet>
+        <template>
+          <uxl-progress-indicator text="Cargando" position="vertical">
+            <h3>This is a slot content when active = false</h3>
+            <div class="items">
+              <div>item 1</div>
+              <div>item 2</div>
+              <div>item 3</div>
+              <div>item 4</div>
+            </div>
+          </uxl-progress-indicator>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
