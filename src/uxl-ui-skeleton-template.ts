@@ -3,17 +3,26 @@ import {TemplateResult} from 'lit-html';
 import {repeat} from 'lit-html/directives/repeat';
 import {guard} from 'lit-html/directives/guard';
 
-const skeletonTemplate = (props) => html `
-<div class="skeletons">
+const listSkeletonTemplate = (props) => html `
+<div class="list-sk ${props.animation} ${props.classifier}">
     ${repeat(props.items, item => html `
-           <div class="skeleton">
-                <div class="skeleton-title"></div>
-                <div class="skeleton-content"></div>
+           <div class="sk">
+                <div class="sk-title"></div>
+                <div class="sk-content"></div>
            </div>
 </div>`
 )}`;
 
+const singleSkeletonTemplate = (props) => html`
+<div class="single-sk ${props.animation} ${props.classifier}">
+    <div class="single-sk-title"></div>
+    <div class="single-sk-content"></div>
+</div>`;
+
 const innerTemplate = (props) => html `
-    ${guard(props.items, () => skeletonTemplate(props))}`;
+${props.type == 'list' 
+    ? guard(props.items, () => listSkeletonTemplate(props))
+    : singleSkeletonTemplate(props)
+}`;
 
 export const template: (props: any) => TemplateResult = innerTemplate;

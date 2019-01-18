@@ -22,5 +22,8 @@ export class UxlUiSkeleton extends LitElement {
     number: number;
 
     @property()
-    animation: skeletonAnimation;
+    animation: skeletonAnimation = "intermitent";
+
+    @property()
+    classifier: string;
 }
