@@ -34,7 +34,9 @@ Your application is already set up to be tested via [web-component-tester](https
 
 `animation`: the animation type
 
-`type`: choose between different skeleton types               
+`type`: choose between different skeleton types    
+           
+`classifier`: provide a classifier to display different layouts, for example: ``vertical`` | ``horizontal``            
 
 
 

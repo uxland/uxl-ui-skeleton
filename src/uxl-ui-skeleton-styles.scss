@@ -30,10 +30,15 @@
   }
 }
 
+$uxl-skeleton-primary-color: blue;
+$uxl-skeleton-secondary-color: red;
+
 :host{
   display: flex;
   flex: 1;
 }
+
+/* List skeleton */
 
 .list-sk{
   display: flex;
@@ -43,9 +48,11 @@
 
   &.horizontal{
     flex-direction: row;
+    flex-wrap: wrap;
 
     .sk{
-      margin: 0 16px 0 0;
+      margin: 0 16px 16px 0;
+      flex: 0 0 30%;
     }
   }
 
@@ -75,6 +82,7 @@
   }
 }
 
+/* Single Skeleton */
 .single-sk{
   display: flex;
   flex: 1;
@@ -91,7 +99,17 @@
   .single-sk-content{
     background-color: #f1f1f1;
     border-radius: 50px;
-    width: 50%;
+    width: 100%;
+    flex: 1;
     height: 30px;
+  }
+
+  &.horizontal{
+    flex-direction: row;
+    align-items: center;
+
+    .single-sk-title{
+      margin: 0 16px 0 0;
+    }
   }
 }

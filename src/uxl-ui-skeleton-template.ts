@@ -1,7 +1,18 @@
 import {html} from '@polymer/lit-element/lit-element';
-import {TemplateResult} from 'lit-html';
 import {repeat} from 'lit-html/directives/repeat';
 import {guard} from 'lit-html/directives/guard';
+import {UxlUiSkeleton} from "./uxl-ui-skeleton";
+
+const getSkeletonTemplate = (props: UxlUiSkeleton) =>{
+    switch (props.type) {
+        case "list":
+            return listSkeletonTemplate(props);
+        case "single":
+            return singleSkeletonTemplate(props);
+        default:
+            return listSkeletonTemplate(props);
+    }
+};
 
 const listSkeletonTemplate = (props) => html `
 <div class="list-sk ${props.animation} ${props.classifier}">
@@ -19,10 +30,4 @@ const singleSkeletonTemplate = (props) => html`
     <div class="single-sk-content"></div>
 </div>`;
 
-const innerTemplate = (props) => html `
-${props.type == 'list' 
-    ? guard(props.items, () => listSkeletonTemplate(props))
-    : singleSkeletonTemplate(props)
-}`;
-
-export const template: (props: any) => TemplateResult = innerTemplate;
+export const template = (props) => guard(props.items, () => getSkeletonTemplate(props));
