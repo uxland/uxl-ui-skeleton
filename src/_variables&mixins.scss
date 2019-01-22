@@ -1,0 +1,40 @@
+$uxl-skeleton-primary-color: #e4e3e3;
+$uxl-skeleton-secondary-color: #f1f1f1;
+
+@mixin layout {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin layout-horizontal {
+  @include layout;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin layout-vertical {
+  @include layout;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin layout-wrap {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin layout-flex {
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+@mixin layout-center {
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}

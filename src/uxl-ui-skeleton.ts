@@ -1,4 +1,4 @@
-import {html, LitElement} from '@polymer/lit-element/lit-element';
+import {html, LitElement} from 'lit-element/lit-element';
 import {property, customElement} from "@uxland/uxl-polymer2-ts";
 import CSS from './uxl-ui-skeleton-styles.js';
 import {template as TEMPLATE} from './uxl-ui-skeleton-template.js';
