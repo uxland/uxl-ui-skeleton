@@ -19,11 +19,7 @@ branches:
   except:
     - /^v\d+\.\d+\.\d+$/
 deploy:
-  provider: npm
-  email: dev@uxland.es
-  api_key: "${NPM_TOKEN}"
+  provider: script
   skip_cleanup: true
-  on:
-    tags: true
-    tag: legacy
-
+  script:
+    - npx semantic-release
