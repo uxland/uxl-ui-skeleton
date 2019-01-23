@@ -15,14 +15,11 @@ script:
 - npm run build
 after_success:
 - gulp dist
-branches:
-  only:
-    - master
 deploy:
   on:
-    branch:
-      master
     tags: true
+    repo: uxland/uxl-ui-skeleton
+    all_branches: true
   provider: script
   skip_cleanup: true
   script:
