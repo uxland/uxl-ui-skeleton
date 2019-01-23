@@ -1,7 +1,7 @@
 language: node_js
 cache:
   directories:
-  - ~/.npm
+    - ~/.npm
 dist: trusty
 sudo: required
 notifications:
@@ -10,17 +10,18 @@ node_js: 10
 addons:
   chrome: stable
 before_script:
-- npm i -g polymer-cli
+  - npm i -g polymer-cli
 script:
-- npm run build
+  - npm run build
+#- xvfb-run npm run test:e2e
+# - npm run test:unit
 after_success:
-- gulp dist
+  - gulp dist
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
 deploy:
-  on:
-    tags: true
-    repo: uxland/uxl-ui-skeleton
-    all_branches: true
   provider: script
   skip_cleanup: true
   script:
-  - npx semantic-release
+    - npx semantic-release
