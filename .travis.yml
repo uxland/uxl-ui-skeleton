@@ -13,14 +13,16 @@ before_script:
 - npm i -g polymer-cli
 script:
 - npm run build
-#- xvfb-run npm run test:e2e
-# - npm run test:unit
 after_success:
 - gulp dist
 branches:
-  except:
-  - /^v\d+\.\d+\.\d+$/
+  only:
+    - master
 deploy:
+  on:
+    branch:
+      master
+    tags: true
   provider: script
   skip_cleanup: true
   script:
