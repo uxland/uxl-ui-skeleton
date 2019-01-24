@@ -18,7 +18,6 @@
     "url": "https://github.com/uxland/uxl-ui-skeleton/issues"
   },
   "dependencies": {
-    "@uxland/uxl-polymer2-ts": "^1.0.11",
     "lit-element": "^2.0.0-rc.3"
   },
   "devDependencies": {
