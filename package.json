@@ -1,6 +1,6 @@
 {
   "name": "@uxland/uxl-ui-skeleton",
-  "version": "0.0.0-development",
+  "version": "2.0.3",
   "description": "UXLand - UI Skeleton",
   "main": "dist/index.js",
   "module": "dist/index.js",
