@@ -73,7 +73,8 @@
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release",
     "polymer:serve": "polymer serve",
-    "serve": "webpack-dev-server --hot --inline --progress"
+    "serve": "webpack-dev-server --hot --inline --progress",
+    "test": "echo no test specified"
   },
   "license": "Apache-2.0",
   "directories": {
