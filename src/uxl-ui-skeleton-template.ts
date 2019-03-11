@@ -1,4 +1,4 @@
-import {html} from 'lit-element/lit-element';
+import {html} from 'lit-element';
 import {repeat} from 'lit-html/directives/repeat';
 import {guard} from 'lit-html/directives/guard';
 import {UxlUiSkeleton} from "./uxl-ui-skeleton";

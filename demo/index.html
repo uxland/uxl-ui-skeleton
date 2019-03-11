@@ -1,52 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-
-    <title>uxl-ui-skeleton demo</title>
-
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-
-    <script type="module">
-      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
-      import '@polymer/iron-demo-helpers/demo-snippet';
+<head>
+    <meta charset="UTF-8">
+    <title>UXL Tile View</title>
+    <script src="/demo/settings.js"></script>
+    <link rel="stylesheet" type="text/css" href="/demo/styles.scss">
+    <script>
+        document.addEventListener('WebComponentsReady', function componentsReady() {
+            document.removeEventListener('WebComponentsReady', componentsReady, false);
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = '<%= htmlWebpackPlugin.files.chunks["main"].entry %>';
+            var refScript = document.body.getElementsByTagName('script')[0];
+            refScript.parentNode.insertBefore(script, refScript);
+        }, false);
     </script>
-
-    <script type="module" src="../src/uxl-ui-skeleton.js"></script>
-
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
-
-      </style>
-    </custom-style>
-  </head>
-  <body>
-    <div class="vertical-section-container centered">
-      <h3>List vertical uxl-ui-skeleton demo</h3>
-      <demo-snippet>
-        <template>
-          <uxl-ui-skeleton id="sk-1" number="4" type="list" classifier="vertical"></uxl-ui-skeleton>
-        </template>
-      </demo-snippet>
-      <h3>List horizontal uxl-ui-skeleton demo</h3>
-      <demo-snippet>
-        <template>
-          <uxl-ui-skeleton id="sk-2" number="8" type="list" animation="disabled" classifier="horizontal"></uxl-ui-skeleton>
-        </template>
-      </demo-snippet>
-      <h3>Single vertical uxl-ui-skeleton demo</h3>
-      <demo-snippet>
-        <template>
-          <uxl-ui-skeleton type="single" animation="disabled" classifier="vertical"></uxl-ui-skeleton>
-        </template>
-      </demo-snippet>
-      <h3>Single horizontal uxl-ui-skeleton demo</h3>
-      <demo-snippet>
-        <template>
-          <uxl-ui-skeleton type="single" animation="disabled" classifier="horizontal"></uxl-ui-skeleton>
-        </template>
-      </demo-snippet>
-    </div>
-  </body>
+</head>
+<body>
+<script defer src="<%= htmlWebpackPlugin.options.paths.webcomponents %>"></script>
+</body>
 </html>

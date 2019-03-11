@@ -1,14 +1,13 @@
-import {html, LitElement} from 'lit-element/lit-element';
-import {property, customElement} from "lit-element/lib/decorators";
-import CSS from './uxl-ui-skeleton-styles.js';
-import {template as TEMPLATE} from './uxl-ui-skeleton-template.js';
+import {html, LitElement, property, customElement} from 'lit-element';
+import * as styles from './uxl-ui-skeleton-styles.scss';
+import {template} from './uxl-ui-skeleton-template';
 import {skeletonAnimation, skeletonType} from "./index";
 
 @customElement('uxl-ui-skeleton')
 export class UxlUiSkeleton extends LitElement {
 
-    render() {
-        return html`${CSS} ${TEMPLATE(this)}`;
+    render(){
+        return html`<custom-style><style>${styles}</style></custom-style> ${template(this)}`;
     }
 
      get items(){
