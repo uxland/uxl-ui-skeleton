@@ -38,6 +38,14 @@ Your application is already set up to be tested via [web-component-tester](https
            
 `classifier`: provide a classifier to display different layouts, for example: ``vertical`` | ``horizontal``            
 
+### Styling
 
+The following custom properties and mixins are available for styling:
+
+| Custom property | Description | Default |
+| --- | --- | --- |
+| `--uxl-ui-skeleton-primary-color` | The background color of the items header | `#e4e3e3` |
+| `--uxl-ui-skeleton-secondary-color` | The background color of the items body | `#f1f1f1` |
+| `--uxl-ui-skeleton-opacity` | The opacity of skeleton items | `1` |
 
 

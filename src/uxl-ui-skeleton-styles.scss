@@ -62,9 +62,10 @@
     @include layout-vertical;
     @include layout-flex;
     margin-bottom: 16px;
+    opacity: var(--uxl-ui-skeleton-opacity, 1);
 
     &__header{
-      background-color: $uxl-skeleton-primary-color;
+      background-color: var(--uxl-ui-skeleton-primary-color, #e4e3e3);
       border-radius: 5px;
       margin-bottom: 6px;
       height: 20px;
@@ -72,7 +73,7 @@
     }
 
     &__body{
-      background-color: $uxl-skeleton-secondary-color;
+      background-color: var(--uxl-ui-skeleton-secondary-color, #f1f1f1);
       border-radius: 5px;
       height: 50px;
     }
@@ -84,16 +85,17 @@
   @include layout-vertical;
   @include layout-flex;
   @include layout-center;
+  opacity: var(--uxl-ui-skeleton-opacity, 1);
 
   &__header{
-    background-color: $uxl-skeleton-primary-color;
+    background-color: var(--uxl-skeleton-primary-color, #e4e3e3);
     border-radius: 50%;
     margin-bottom: 8px;
     height: 60px;
     width: 60px;
   }
   &__body{
-    background-color: $uxl-skeleton-secondary-color;
+    background-color: var(--uxl-skeleton-secondary-color, #f1f1f1);
     border-radius: 50px;
     width: 100%;
     flex: 1;
