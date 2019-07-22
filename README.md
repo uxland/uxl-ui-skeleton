@@ -23,7 +23,6 @@ $ polymer test
 
 Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
 
-
 ### Description
 
 `<uxl-ui-skeleton>` is a component that provides different types of ui skeletons to display when a petitions is fetching, for example:
