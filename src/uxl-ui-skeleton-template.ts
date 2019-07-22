@@ -15,7 +15,7 @@ const getSkeletonTemplate = (props: UxlUiSkeleton) =>{
 };
 
 const listSkeletonTemplate = (props) => html `
-<div class="wrapper ${props.animation} ${props.classifier}">
+<div class="wrapper ${props.animation} ${props.classifier}" part="wrapper">
     ${repeat(props.items, item => html `
            <div class="skeleton" part="item">
                 <div class="skeleton__header" part="item__header"></div>
@@ -25,9 +25,9 @@ const listSkeletonTemplate = (props) => html `
 )}`;
 
 const singleSkeletonTemplate = (props) => html`
-<div class="single-skeleton ${props.animation} ${props.classifier}">
-    <div class="single-skeleton__header"></div>
-    <div class="single-skeleton__body"></div>
+<div class="single-skeleton ${props.animation} ${props.classifier}" part="item">
+    <div class="single-skeleton__header" part="item__header"></div>
+    <div class="single-skeleton__body" part="item__body"></div>
 </div>`;
 
 export const template = (props) => guard(props.items, () => getSkeletonTemplate(props));
