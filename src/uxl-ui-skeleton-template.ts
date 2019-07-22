@@ -17,9 +17,9 @@ const getSkeletonTemplate = (props: UxlUiSkeleton) =>{
 const listSkeletonTemplate = (props) => html `
 <div class="wrapper ${props.animation} ${props.classifier}">
     ${repeat(props.items, item => html `
-           <div class="skeleton">
-                <div class="skeleton__header"></div>
-                <div class="skeleton__body"></div>
+           <div class="skeleton" part="item">
+                <div class="skeleton__header" part="item__header"></div>
+                <div class="skeleton__body" part="item__body"></div>
            </div>
 </div>`
 )}`;

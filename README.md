@@ -32,9 +32,9 @@ Your application is already set up to be tested via [web-component-tester](https
 
 `number`: the number of elements that will display the skeleton
 
-`animation`: the animation type
+`animation`: the animation type, available: ``intermitent`` | ``disabled``
 
-`type`: choose between different skeleton types    
+`type`: choose between different skeleton types, available: ``list`` | ``single``   
            
 `classifier`: provide a classifier to display different layouts, for example: ``vertical`` | ``horizontal``            
 
