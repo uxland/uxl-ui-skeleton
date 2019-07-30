@@ -1,6 +1,6 @@
-import {html, LitElement, property, customElement} from 'lit-element/lit-element';
-import * as styles from './styles.scss';
-import {template} from './template';
+import { html, LitElement, customElement, css, unsafeCSS } from 'lit-element';
+import styles from './styles.scss';
+import { template } from './template';
 /**
  * `uxl-tile-view`
  * A tile view component
@@ -11,7 +11,15 @@ import {template} from './template';
  */
 @customElement('demo-component')
 export class DemoComponent extends LitElement {
-    render(){
-        return html`<custom-style><style>${styles}</style></custom-style> ${template()}`;
-    }
+  render() {
+    return html`
+      ${template()}
+    `;
+  }
+
+  static get styles() {
+    return css`
+      ${unsafeCSS(styles)}
+    `;
+  }
 }
