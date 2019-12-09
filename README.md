@@ -7,21 +7,13 @@ An ui skeleton component
 
 ## Install the Polymer-CLI
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed. Run `npm install` to install your element's dependencies, then run `polymer serve` to serve your element locally.
+First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed. Run `npm install` to install your element's dependencies, then run `serve` to serve your element locally.
 
 ## Viewing Your Element
 
 ```
-$ polymer serve
+$ npm run serve
 ```
-
-## Running Tests
-
-```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
 
 ### Description
 
@@ -29,22 +21,36 @@ Your application is already set up to be tested via [web-component-tester](https
 
 ### Properties
 
+| Property     | Attribute    | Type                | Default       |
+| ------------ | ------------ | ------------------- | ------------- |
+| `animation`  | `animation`  | `skeletonAnimation` | "intermitent" |
+| `classifier` | `classifier` | `string`            | **required**  |
+| `number`     | `number`     | `string`            | **required**  |
+| `type`       | `type`       | `skeletonType`      | **required**  |
+
 `number`: the number of elements that will display the skeleton
 
-`animation`: the animation type, available: ``intermitent`` | ``disabled``
+`animation`: the animation type, available: `intermitent` | `disabled`
 
-`type`: choose between different skeleton types, available: ``list`` | ``single``   
-           
-`classifier`: provide a classifier to display different layouts, for example: ``vertical`` | ``horizontal``            
+`type`: choose between different skeleton types, available: `list` | `single`
 
-### Styling
+`classifier`: provide a classifier to display different layouts, for example: `vertical` | `horizontal`
+
+## CSS Shadow Parts
+
+| Part           | Description    |
+| -------------- | -------------- |
+| `item`         | item container |
+| `item__body`   | item body      |
+| `item__header` | item header    |
+| `wrapper`      | List wrapper   |
+
+### CSS Custom properties
 
 The following custom properties and mixins are available for styling:
 
-| Custom property | Description | Default |
-| --- | --- | --- |
-| `--uxl-ui-skeleton-primary-color` | The background color of the items header | `#e4e3e3` |
-| `--uxl-ui-skeleton-secondary-color` | The background color of the items body | `#f1f1f1` |
-| `--uxl-ui-skeleton-opacity` | The opacity of skeleton items | `1` |
-
-
+| Custom property                     | Description                              | Default   |
+| ----------------------------------- | ---------------------------------------- | --------- |
+| `--uxl-ui-skeleton-primary-color`   | The background color of the items header | `#e4e3e3` |
+| `--uxl-ui-skeleton-secondary-color` | The background color of the items body   | `#f1f1f1` |
+| `--uxl-ui-skeleton-opacity`         | The opacity of skeleton items            | `1`       |
