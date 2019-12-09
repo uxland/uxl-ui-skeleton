@@ -23,7 +23,8 @@
     "cjs": true
   },
   "dependencies": {
-    "lit-element": "^2.2.1"
+    "lit-element": "^2.2.1",
+    "web-component-analyzer": "^0.1.21"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -110,7 +111,8 @@
     "webpack:build": "webpack --progress",
     "webpack:build:prod": "webpack --env.NODE_ENV=production --optimize-minimize --progress",
     "serve": "webpack-dev-server --hot --inline --progress",
-    "delete:transpiledjs": "npx rimraf src/**/*.js src/**/*.js.map demo/index.js demo/index.js.map"
+    "delete:transpiledjs": "npx rimraf src/**/*.js src/**/*.js.map demo/index.js demo/index.js.map",
+    "analyce-wc": "wca analyze src --format markdown"
   },
   "license": "Apache-2.0",
   "directories": {

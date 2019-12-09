@@ -1,7 +1,9 @@
+// @csspart mypart - Hello
+
 @import '_variables&mixins';
 
 @mixin animation-fade-out-in {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
   filter: alpha(opacity=100);
   -khtml-opacity: 1;
   -webkit-opacity: 1;
@@ -32,39 +34,39 @@
   }
 }
 
-:host{
+:host {
   @include layout;
   @include layout-flex;
 }
 
 /* List skeleton */
 
-.wrapper{
+.wrapper {
   @include layout-vertical;
   @include layout-flex;
   padding: 16px;
 
-  &.horizontal{
+  &.horizontal {
     @include layout-horizontal;
     @include layout-wrap;
 
-    .skeleton{
+    .skeleton {
       margin: 0 16px 16px 0;
       flex: 0 0 30%;
     }
   }
 
-  &.intermitent{
+  &.intermitent {
     @include animation-fade-out-in;
   }
 
-  .skeleton{
+  .skeleton {
     @include layout-vertical;
     @include layout-flex;
     margin-bottom: 16px;
     opacity: var(--uxl-ui-skeleton-opacity, 1);
 
-    &__header{
+    &__header {
       background-color: var(--uxl-ui-skeleton-primary-color, #e4e3e3);
       border-radius: 5px;
       margin-bottom: 6px;
@@ -72,7 +74,7 @@
       width: 30%;
     }
 
-    &__body{
+    &__body {
       background-color: var(--uxl-ui-skeleton-secondary-color, #f1f1f1);
       border-radius: 5px;
       height: 50px;
@@ -81,20 +83,20 @@
 }
 
 /* Single Skeleton */
-.single-skeleton{
+.single-skeleton {
   @include layout-vertical;
   @include layout-flex;
   @include layout-center;
   opacity: var(--uxl-ui-skeleton-opacity, 1);
 
-  &__header{
+  &__header {
     background-color: var(--uxl-skeleton-primary-color, #e4e3e3);
     border-radius: 50%;
     margin-bottom: 8px;
     height: 60px;
     width: 60px;
   }
-  &__body{
+  &__body {
     background-color: var(--uxl-skeleton-secondary-color, #f1f1f1);
     border-radius: 50px;
     width: 100%;
@@ -102,11 +104,11 @@
     height: 30px;
   }
 
-  &.horizontal{
+  &.horizontal {
     @include layout-horizontal;
     @include layout-center;
 
-    .single-skeleton__header{
+    .single-skeleton__header {
       margin: 0 16px 0 0;
     }
   }
